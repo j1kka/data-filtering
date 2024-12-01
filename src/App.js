@@ -28,6 +28,12 @@ function App() {
   return (
     <div>
       <h1>Filtering Subjects</h1>
+      <input
+  type="text"
+  placeholder="Search..."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+/>
     </div>
   );
 }
