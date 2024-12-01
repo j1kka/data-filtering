@@ -23,9 +23,12 @@ function App() {
   
     fetchData();
   }, []);
-  
 
-  return (
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+  
+   return (
     <div>
       <h1>Filtering Subjects</h1>
       <input
@@ -34,6 +37,11 @@ function App() {
   value={search}
   onChange={(e) => setSearch(e.target.value)}
 />
+<ul>
+  {filteredData.map((item) => (
+    <li key={item.id}>{item.name}</li>
+  ))}
+</ul>
     </div>
   );
 }
